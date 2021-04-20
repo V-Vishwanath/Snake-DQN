@@ -1,4 +1,5 @@
 import pygame
+from sys import exit
 from time import sleep
 
 from mlagents.agent import Agent
@@ -68,7 +69,7 @@ def play_the_game(display: pygame.Surface):
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				pygame.quit()
-				quit()
+				exit(0)
 
 			clicked = (
 					event.type == pygame.MOUSEBUTTONDOWN and
@@ -116,7 +117,7 @@ def play_the_game(display: pygame.Surface):
 
 				elif selected == 3:
 					pygame.display.quit()
-					quit()
+					exit(0)
 
 		if game_over:
 			if game_over_time <= 0:
@@ -141,7 +142,7 @@ def play_the_game(display: pygame.Surface):
 
 					elif selected == 2:
 						pygame.display.quit()
-						quit()
+						exit(0)
 			else:
 				game_over_time -= 1
 
@@ -167,7 +168,7 @@ def watch_agent_play(display: pygame.Surface):
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				pygame.quit()
-				quit()
+				exit(0)
 
 			clicked = (
 					event.type == pygame.MOUSEBUTTONDOWN and
@@ -206,7 +207,7 @@ def watch_agent_play(display: pygame.Surface):
 
 				elif selected == 3:
 					pygame.display.quit()
-					quit()
+					exit(0)
 
 		pygame.display.flip()
 
@@ -235,7 +236,7 @@ def main_screen(display: pygame.Surface):
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				pygame.quit()
-				quit()
+				exit(0)
 
 			clicked = (
 				event.type == pygame.MOUSEBUTTONDOWN and
@@ -254,7 +255,7 @@ def main_screen(display: pygame.Surface):
 
 			else:
 				pygame.quit()
-				quit()
+				exit(0)
 
 		pygame.display.flip()
 		clock.tick(60)
