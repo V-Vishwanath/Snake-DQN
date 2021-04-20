@@ -6,3 +6,5 @@ CONTROLS:
 * A -> LEFT
 * S -> DOWN
 * D -> RIGHT
+
+* ESC -> Options Menu
